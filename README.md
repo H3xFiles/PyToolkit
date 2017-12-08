@@ -2,7 +2,7 @@
 These are some of the code I wrote, nothing fency pretty basic stuff. There are still some I need to fetch and upload here, but I will do later on. 
 
 ## is that all? 
-Well, pretty much, but I am always up to something that I might not upload here. 
+Well, not at all, there are many other repositories hided here and there. But, what I post here is officially supported by me as interview material. There are other repositories about my journal in Assembly and Linux. 
 
 ## requests? 
 I am up for challenges, if you want to test me, I will be glad to try my best.
