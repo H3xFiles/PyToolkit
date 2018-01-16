@@ -1,3 +1,6 @@
+![alt text](http://www.devhumor.com/content/uploads/images/April2017/sql.jpg)
+
+
 # About
 These are some of the codes I personally wrote, nothing fency pretty basic stuff. There are still some I need to fetch and upload here, but I will do later on. 
 
