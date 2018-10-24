@@ -1,22 +1,25 @@
-### 24/102018 
+## 24/102018 
 This is the rework of my old notes in python, I am using the excuse of having an interview to actually go over these notes and improve them with some more knowledge I aquired during my previous internship.
 So, the first thing I am changing the file type to an md file, so I can make it preattier  to read. 
 
-#------------Basic Operators------------
+```Python
 
-#sum
+```
+### Basic Operators
+```Python
+#Sum
 print(2 + 1)
 
-#subtraction
+#Subtraction
 print(3 - 2)
 
-#multiplication
+#Multiplication
 print(2 * 2)
 
 #Power
 print(2 ** 2)
 
-#divisions
+#Divisions
 print(4 / 2.0)
 print(int(4 / 2))
 print(type(str(4/2)))
@@ -24,31 +27,31 @@ print(type(str(4/2)))
 #Modulus
 print(5 % 2)
 print(5 % 1)
+```
 
-
-# In[ ]:
-
-# ------------ Assignment Operators ------------ 
-
+### Assignment Operators
+```Python
 #equal
 =
+
 #increment
 +=
+
 #decrement
 -=
+
 #multiply
 *=
+
 #divide
 (=)
+
 #exponent
 **=
+```
 
-
-
-# In[26]:
-
-#-----------Variables------------
-
+### Variables
+```Python
 #int
 integer_var = 12
 print(type(integer_var))
@@ -73,12 +76,10 @@ print(a>=b)
 print(a!=b)
 print(a>b and b==b)
 print(a>b or b==b)
+```
 
-
-# In[ ]:
-
-#------------Data Type Conversion-------------
-
+### Data Type Conversion
+```Python
 #int(x) Cast an int value
 #str(x) Cast a string value
 #eval(str) Evaluate the string and return an object
@@ -86,11 +87,10 @@ print(a>b or b==b)
 #list(s) Convert it to a list
 #set(s) Convert it to a set
 #dict(d) Creates a dictionary. d must be a sequence of (key,value) tuples.
+```
 
-
-# In[ ]:
-
-#------------Print method------------
+### Print method
+```Python
 x = 'I am a string'
 print(x)
 
@@ -108,15 +108,11 @@ string[5]
 string[1:5]
 string[5:]
 string[:5]
+```
 
-
-
-# In[ ]:
-
-#------------String formatting: basic methods------------
-
+### String formatting: basic methods
+```Python
 website = "http://www.MINdwareLaB.org"
-
 print(website.upper())
 print(website.lower())
 print(website.split("."))
@@ -124,47 +120,35 @@ print(website.split("//"))
 print(website.split("www"))
 print(website.split(".")[1])
 print(website.split(".")[2])
+```
 
-
-# In[ ]:
-
-#------------String formatting: string escape -----------
-
-
+### String formatting: string escape
+```Python
 #\\	Backslash (\)
 print("\\")
-
 
 #\'	Single quote (')
 print("\'")
 
-
 #\"	Double quote (")
 print("\"mindwarelab\"")
-
 
 #\b	ASCII Backspace (BS)
 print("Mindwarelab\b")
 
-
 #\n	ASCII Linefeed (LF)
 print("Mindware\nlab")
 
-
 #\t	ASCII Horizontal Tab (TAB)
 print("\tmindwarelab")
+```
 
-
-# In[ ]:
-
-#------------List vs Touples vs Dictionaries memorandum------------
+### List vs Touples vs Dictionaries memorandum
+```Python
 list1 = [] #this is a list
 touples1 = () #this is a touple
 disctionaries = {} #this is a dictionary
- 
-
-
-# In[ ]:
+```
 
 #------------List------------
 #Similar to the arrays, but it can contain mixed data type
