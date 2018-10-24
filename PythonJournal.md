@@ -2,9 +2,7 @@
 This is the rework of my old notes in python, I am using the excuse of having an interview to actually go over these notes and improve them with some more knowledge I aquired during my previous internship.
 So, the first thing I am changing the file type to an md file, so I can make it preattier  to read. 
 
-```Python
 
-```
 ### Basic Operators
 ```Python
 #Sum
@@ -78,6 +76,16 @@ print(a>b and b==b)
 print(a>b or b==b)
 ```
 
+### Take user input
+```Bash
+python my_awesome_script par1 par2 par3
+```
+```Python
+my_cool_variable1 = argv[1] 
+my_cool_variable2 = argv[2] 
+my_cool_variable3 = argv[3] 
+```
+
 ### Data Type Conversion
 ```Python
 #int(x) Cast an int value
@@ -142,8 +150,20 @@ print("Mindware\nlab")
 #\t	ASCII Horizontal Tab (TAB)
 print("\tmindwarelab")
 ```
+### Flow manipulation
+Python has not switch statements. For more detailed [info](https://bytebaker.com/2008/11/03/switch-case-statement-in-python/) and [here](https://www.python.org/dev/peps/pep-3103/)
+```Python
+if var1 >= var:
+    #do something here
+elif var1 <= var2:
+    #do something else here
+elif var1 == var2:
+    #do something else here
+else:
+    #do something even different here
+```
 
-### List vs Touples vs Dictionaries memorandum
+### List vs Touples vs Dictionaries
 ```Python
 list1 = [] #this is a list
 touples1 = () #this is a touple
@@ -216,19 +236,6 @@ print(tup1)
 #Operation on list of touples
 num = [(0,1),(1,1),(0,0)]
 for a,b in num: print(a)
-```
-
-### Logic
-```Python
-a = 10
-b = 20
-
-if a == b:
-    print("Something is wrong here")
-elif b == b:
-    print("How obvious")
-else:
-    print("uhm")
 ```
 
 ### Repeated actions
