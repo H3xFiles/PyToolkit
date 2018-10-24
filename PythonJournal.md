@@ -94,10 +94,10 @@ print(a>b or b==b)
 x = 'I am a string'
 print(x)
 
-age  = 19
-sex = "girl"
-country = "USA"
-name = "Kelly"
+age  = 29
+sex = "god"
+country = "Earth"
+name = "Hex"
 
 print("My name is {} and I am {} years old. I am a {} from {}".format(name,age,sex,country))
 print("My name is {name} and I am {age} years old. I am a {sex} from {country}".format(name=name,age=age,sex=sex,country=country))
@@ -150,7 +150,8 @@ touples1 = () #this is a touple
 disctionaries = {} #this is a dictionary
 ```
 
-#------------List------------
+### List
+```Python
 #Similar to the arrays, but it can contain mixed data type
 
 list1 = ["USA", 99, "guns"]
@@ -182,13 +183,10 @@ print(list1)
 
 #check an item inside a list
 print("x" in ["x",88,"Torino"])
+```
 
-
-
-# In[ ]:
-
-#------------Dictionaries------------
-
+### Dictionaries
+```Python
 dictionary1 = {"key1":"Ferrari","key2":"Mercedes"}
 dictionary2 = {"key1":[14,77,54],"key2":"Mercedes"}
 dictionary3 = {"key1":{"numbers":[55,43,99]},"key2":"Mercedes"}
@@ -200,24 +198,17 @@ print(dictionary3["key1"]["numbers"][2])
 print(dictionary1.keys())
 print(dictionary1.items())
 print(dictionary1.values())
+```
 
-
-
-
-# In[ ]:
-
-#------------Set------------
+### Set
+```Python
 set1 = {1,2,6,7,5,5}
 set1.add(9)
 set1
+```
 
-
-
-
-# In[ ]:
-
-#------------Touples------------
-
+### Touples
+```Python
 #touples are read-only 
 tup1 = ("moon", "venus", 2017, 2009)
 print(tup1)
@@ -225,12 +216,10 @@ print(tup1)
 #Operation on list of touples
 num = [(0,1),(1,1),(0,0)]
 for a,b in num: print(a)
+```
 
-
-# In[ ]:
-
-#-----------Logic------------
-
+### Logic
+```Python
 a = 10
 b = 20
 
@@ -240,12 +229,10 @@ elif b == b:
     print("How obvious")
 else:
     print("uhm")
+```
 
-
-# In[ ]:
-
-#------------Repeated actions------------
-
+### Repeated actions
+```Python
 age_set=[33,56,78,92,11]
 for numbers in age_set:
     print("Someone has {} years old".format(numbers))
@@ -260,12 +247,10 @@ a = 1
 while a < 10:
     print("a is {}".format(a))
     a = a + 1
+```
 
-
-# In[ ]:
-
-#------------Appending items to a list with a for loop------------
-
+### Appending items to a list with a for loop
+```Python
 my_list = []
 for numbers in range(10):
     my_list.append(numbers **2)
@@ -274,12 +259,10 @@ print(my_list)
 #List Comprehensions
 print([numbers **2 for numbers in range(10)])
 print([numbers **2 for numbers in range(10) if numbers % 2 == 0])
+```
 
-
-# In[20]:
-
-#------------functions------------
-
+### functions
+```Python
 def welcome(name = "{error: name not assigned}"):
     global age
     age = 34
@@ -299,12 +282,10 @@ print(output)
 
 print(age)
 print(surname)
+```
 
-
-
-# In[ ]:
-
-#------------Maps and lambda------------
+### Maps and lambda
+```Python
 from functools import reduce
 list_of_number = [1,2,3,4,5,6,7,8,9,10]
 
@@ -325,11 +306,10 @@ print(list(filter(lambda x: x%2 == 1, list_of_number)))
 #Reduce
 print(reduce((lambda x, y: x*y), [1,2,3,4,5,6,7,8,9,10]))
 print(reduce((lambda x, y: x*y), list_of_number))
+```
 
-
-# In[ ]:
-
-#----------Classes-----------
+### Classes
+```Python
 class Employee:
     def __init__(self,first,last,pay):
         self.first = first
@@ -365,15 +345,10 @@ class Missle_luncher:
 missle1 = Missle_luncher()
 missle1.counter()
 #print(missle1.__timer) #AttributeError: 'Missle_luncher' object has no attribute '__timer'
-
-        
-
-        
-
-
-# In[8]:
-
-# -----------import libraries and Code introspection ------------
+```
+       
+### import libraries and Code introspection
+```Python
 import pandas
 import numpy
 
@@ -382,13 +357,10 @@ import numpy
 #numpy?
 #dir(pandas) #functionality
 #pandas.DataFrame?
+```
 
-
-
-# In[ ]:
-
-#----------Time handling-----------
-
+### Time handling
+```Python
 import time
 import calendar
 
@@ -396,12 +368,10 @@ localtime = time.asctime( time.localtime(time.time()) )
 print ("What time is it? {}".format(localtime))
 cal = calendar.month(2017, 4)
 print(cal)
+```
 
-
-# In[ ]:
-
-#---------Handling errors ---------
-
+### Handling errors
+```Python
 try: #try this code
     pass #some code goes here
 except: #if happen this well-know possible exception, please do this
@@ -412,25 +382,22 @@ else: #if happens something else that we are not aware of
     pass #some code goes here
 finally: #this code will be always execute no matter what
     pass #some code goes here
+```
 
-
-# In[ ]:
-
-# ----------- Regex ------------
+### Regex 
+```Python
 #Regex is something horrible at the first glance, but it is not that bad at all if few focus your attention for few minutes.
 #(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[-A-Z0-9+&@#\/%=~_|$?!:,.])*(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[A-Z0-9+&@#\/%=~_|$])
 
 #<\s*a[^>]*>(.*?)<\s*/\s*a>
 
 # https://regexone.com/
+```
 
-
-# In[30]:
-
-# ----------- Multithreaded Programming ------------
+# Multithreaded Programming
+```Python
 import _thread
 import time
-
 
 def bomb(name, timer):
     
@@ -449,9 +416,4 @@ try:
     _thread.start_new_thread(bomb, ("bomb6",8,))
 except:
     print("My God, it is full of stars!")
-
-    
-            
-
-
-# In[ ]:
+```
