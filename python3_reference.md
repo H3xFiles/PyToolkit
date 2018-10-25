@@ -623,3 +623,56 @@ config_file = os.path.join(working_dir, 'plaguescanner.conf')
 config.read(config_file)
  
 ```
+#### xml parsing
+```xml
+<Config>
+	<FacebookConfig>
+		<api>http://facebook.com/app/api/</api>
+		<app_name></app_name>
+		<user></user>	
+	</FacebookConfig> 
+	<Errors>
+		<Error name="INVALID_TOKEN" value="TThe provided Facebook token is invalid" />
+	</Errors>
+	<Messages>
+		<Message name="FBTOKEN_SOTRED" value="The provided Facebook token has been successfully stored" />
+	</Messages>
+</Config>
+```
+
+```Python
+import os
+import xml.etree.ElementTree as CP
+
+class ConfigParserException(Exception):
+    pass
+    
+def __init__(self, filepath, templates_dir):
+        self.filepath = filepath
+        try:
+            xml_config = CP.parse(filepath)
+            root = xml_config.getroot()
+	except IOError as ie:
+            raise ConfigParserException("The config file '{}' cannot be found.".format(filepath))
+        except AttributeError as ae:
+            raise ConfigParserException("Missing parameters in config file.")
+        except CP.ParseError as pe:
+            raise ConfigParserException("Error parsing config file)
+	for templatefile in os.listdir(self.templates_dir):
+            if templatefile.endswith(".xml"): 
+                try:
+                    xml_config = CP.parse(os.path.join(self.templates_dir,templatefile))
+                    xml_template = xml_config.getroot()
+                    if xml_template.tag != "template":
+                        raise ConfigParserException("Error parsing template file)
+                    template_name = xml_template.get('name')
+                    template = {}
+                    template['description'] = xml_template.get('description')
+                    template['attributes'] = {}
+                    template['actions'] = []
+                    for xml_attribute in xml_template.findall('attribute'):
+                        attribute_name = xml_attribute.get('name')
+                        attribute = {}
+                        attribute['type'] = xml_attribute.get('type')
+                        template['attributes'][attribute_name] = attribute
+```
