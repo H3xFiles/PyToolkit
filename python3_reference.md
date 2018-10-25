@@ -582,3 +582,44 @@ except AppError as error:
     logger.error(error)
     raise                 
 ```
+
+### Generate temporary files and directories
+```Python
+import tempfile
+import shutil
+
+tmpdir = tempfile.mkdtemp()
+print("temporary directory at " + tmpdir)
+
+shutil.rmtree(tmpdir)
+```
+
+[example](https://programtalk.com/vs2/python/10241/PlagueScanner/avast-agent.py/)
+
+```Python
+import tempfile
+import subprocess
+
+def scan_file(sample):
+    sample_data = sample.read()
+    with tempfile.TemporaryDirectory() as td:
+        sample_file = os.path.join(td, 'sample')
+        fp = open(sample_file, 'wb')
+        fp.write(sample_data)
+        fp.close()
+        command = os.path.join('C:\\', 'Program Files', 'AVAST Software', 'Avast', 'ashCmd.exe')
+        scanner = subprocess.Popen([command, '/_', sample_file], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
+        stdout, stderr = scanner.communicate()
+    return stdout
+```
+
+## Working with config files (configparser)
+```Python
+import configparser
+import os
+
+config = configparser.ConfigParser()
+config_file = os.path.join(working_dir, 'plaguescanner.conf')
+config.read(config_file)
+ 
+```
