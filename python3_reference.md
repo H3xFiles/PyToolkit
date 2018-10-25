@@ -428,6 +428,15 @@ except:
 ```
 
 ### make an executable
+How to install it:
+```cmd
+python -m pip install cx_Freeze --upgrade
+```
+Then run ... 
+You don't need to create the folder.
+```Bash
+python setup.py <new_project_name_folder> 
+```
 [cx_Freeze is a set of scripts and modules for freezing Python scripts into executables](ps://anthony-tuininga.github.io/cx_Freeze/)
 ```Python
 import shutil, os
