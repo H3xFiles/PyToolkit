@@ -403,7 +403,7 @@ finally: #this code will be always execute no matter what
 # https://regexone.com/
 ```
 
-# Multithreaded Programming
+### Multithreaded Programming
 ```Python
 import _thread
 import time
@@ -425,4 +425,54 @@ try:
     _thread.start_new_thread(bomb, ("bomb6",8,))
 except:
     print("My God, it is full of stars!")
+```
+
+### make an executable
+[cx_Freeze is a set of scripts and modules for freezing Python scripts into executables](ps://anthony-tuininga.github.io/cx_Freeze/)
+```Python
+import shutil, os
+from cx_Freeze import setup, Executable
+
+packages = [
+    'multiprocessing',
+    'idna',
+    'win32timezone',
+]
+
+include_files = [ 
+    'your_config_file.xml',
+    'your_sexy_icon.ico',
+    'sub_folders_you_want_to_include/',
+]
+
+exclude = [
+    'something', 
+]
+
+include = [
+]
+
+name_of_the_executable = (Executable("name_of_the_executable.py",
+                       targetName="name_of_the_executable.exe",
+                       icon="your_sexy_icon.ico", 
+                  ))
+                                    
+setup(
+    name="name_of_the_executable",
+    version="0.1",
+    author="h3x",
+    description="Making an executable",
+    options={
+        'build_exe': {
+            'packages': packages,
+            'include_files': include_files,
+            'includes': include,
+            'excludes': exclude,
+            'build_exe': 'build',
+            'include_msvcr': True,
+            'optimize': 2
+        }
+    },
+    executables=[name_of_the_executable]
+)
 ```
