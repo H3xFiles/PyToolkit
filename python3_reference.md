@@ -614,7 +614,8 @@ def scan_file(sample):
 ```
 
 ### Working with config files (configparser)
-#### Basic config parser
+#### [Basic config parser](https://docs.python.org/3/library/configparser.html)
+
 ```xml
 [DEFAULT]
 ServerAliveInterval = 45
@@ -647,6 +648,38 @@ with open('example.ini', 'w') as configfile:
    config.write(configfile)
  
 ```
+
+Let's test the config keys inside the config file
+```Bash
+>>> config = configparser.ConfigParser()
+>>> config.sections()
+[]
+>>> config.read('example.ini')
+['example.ini']
+>>> config.sections()
+['bitbucket.org', 'topsecret.server.com']
+>>> 'bitbucket.org' in config
+True
+>>> 'bytebong.com' in config
+False
+>>> config['bitbucket.org']['User']
+'hg'
+>>> config['DEFAULT']['Compression']
+'yes'
+>>> topsecret = config['topsecret.server.com']
+>>> topsecret['ForwardX11']
+'no'
+>>> topsecret['Port']
+'50022'
+>>> for key in config['bitbucket.org']:  
+...     print(key)
+>>> config['bitbucket.org']['ForwardX11']
+'yes'
+```
+
+
+
+
 #### xml parsing
 ```xml
 <Config>
