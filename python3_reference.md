@@ -396,6 +396,7 @@ finally: #this code will be always execute no matter what
 ### Regex 
 Main module [re](https://docs.python.org/3.3/library/re.html)
 - [RegexOne](https://regexone.com/)
+</br>
 An example taken from the re help page.
 ```Python
 import collections
@@ -528,4 +529,48 @@ setup(
     },
     executables=[name_of_the_executable]
 )
+```
+
+### Base64
+```Python
+import base64
+
+def __file_to_base64(filepath):
+	with open(filepath, "rb") as f:
+		return base64.b64encode(f.read())
+```
+
+### Exceptions handling
+
+#### Basic
+
+```Python
+ try:
+     print(1 / 0)
+except Exception as error:
+    raise RuntimeError("Something bad happened") from error
+```
+
+#### Rise an exception manually handling it.
+```Python
+class MyAppLookupError(LookupError):
+    '''raise this when there's a lookup error for my app'''
+    pass
+ 
+ #somewhere in your code
+ if not <this>:
+        raise MyAppLookupError("Error: something you were trying to do is  not correct.")
+```
+
+#### Loggingg
+```Python
+import logging
+LOG_FILENAME = '/tmp/logging_example.out'
+logging.basicConfig(filename=LOG_FILENAME, level=logging.DEBUG)
+
+try:
+    do_something_in_app_that_breaks_easily()
+except AppError as error:
+    logger.error(error)
+    raise                 
 ```
