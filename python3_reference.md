@@ -553,13 +553,19 @@ except Exception as error:
 
 #### Rise an exception manually handling it.
 ```Python
-class MyAppLookupError(LookupError):
-    '''raise this when there's a lookup error for my app'''
+class error_handling(error):
     pass
  
  #somewhere in your code
  if not <this>:
-        raise MyAppLookupError("Error: something you were trying to do is  not correct.")
+        raise error_handling("Error: something you were trying to do is  not correct.")
+```
+
+#### Traceback
+```Python
+except Exception as e:
+    et, ei, tb = sys.exc_info()
+    raise ei.with_traceback(tb)
 ```
 
 #### Loggingg
