@@ -613,14 +613,38 @@ def scan_file(sample):
     return stdout
 ```
 
-## Working with config files (configparser)
+### Working with config files (configparser)
+#### Basic config parser
+```xml
+[DEFAULT]
+ServerAliveInterval = 45
+Compression = yes
+CompressionLevel = 9
+ForwardX11 = yes
+
+[bitbucket.org]
+User = hg
+
+[topsecret.server.com]
+Port = 50022
+ForwardX11 = no
+```
+
 ```Python
 import configparser
-import os
-
 config = configparser.ConfigParser()
-config_file = os.path.join(working_dir, 'plaguescanner.conf')
-config.read(config_file)
+config['DEFAULT'] = {'ServerAliveInterval': '45',
+                      'Compression': 'yes',
+                      'CompressionLevel': '9'}
+config['bitbucket.org'] = {}
+config['bitbucket.org']['User'] = 'hg'
+config['topsecret.server.com'] = {}
+topsecret = config['topsecret.server.com']
+topsecret['Port'] = '50022'     # mutates the parser
+topsecret['ForwardX11'] = 'no'  # same here
+config['DEFAULT']['ForwardX11'] = 'yes'
+with open('example.ini', 'w') as configfile:
+   config.write(configfile)
  
 ```
 #### xml parsing
