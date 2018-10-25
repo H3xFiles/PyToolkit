@@ -99,7 +99,7 @@ my_cool_variable3 = argv[3]
 
 ### Print method
 ```Python
-x = 'I am a string'
+x = "I am a string"
 print(x)
 
 age  = 29
@@ -151,7 +151,6 @@ print("Mindware\nlab")
 print("\tmindwarelab")
 ```
 ### Flow manipulation
-Python has not switch statements. For more detailed [info](https://bytebaker.com/2008/11/03/switch-case-statement-in-python/) and [here](https://www.python.org/dev/peps/pep-3103/)
 ```Python
 if var1 >= var:
     #do something here
@@ -163,7 +162,12 @@ else:
     #do something even different here
 ```
 
-### List vs Touples vs Dictionaries
+### List, Touples, Dictionaries, Sets
+ - Use a dictionary when you have a set of unique keys that map to values.
+ - Use a list if you have an ordered collection of items.
+ - Use a set to store an unordered set of items.
+ - Use a touple to store an unordered set of read-only items
+
 ```Python
 list1 = [] #this is a list
 touples1 = () #this is a touple
@@ -173,7 +177,6 @@ disctionaries = {} #this is a dictionary
 ### List
 ```Python
 #Similar to the arrays, but it can contain mixed data type
-
 list1 = ["USA", 99, "guns"]
 list2 = [44,77,87.7,55]
 
@@ -220,13 +223,6 @@ print(dictionary1.items())
 print(dictionary1.values())
 ```
 
-### Set
-```Python
-set1 = {1,2,6,7,5,5}
-set1.add(9)
-set1
-```
-
 ### Touples
 ```Python
 #touples are read-only 
@@ -236,6 +232,13 @@ print(tup1)
 #Operation on list of touples
 num = [(0,1),(1,1),(0,0)]
 for a,b in num: print(a)
+```
+
+### Set
+```Python
+set1 = {1,2,6,7,5,5}
+set1.add(9)
+set1
 ```
 
 ### Repeated actions
@@ -344,7 +347,7 @@ print("Salary after the increase in the salary is equal to {}".format(employee1.
 
 #hiding variable
 class Missle_luncher:
-    __timer = 0 
+    __timer = 0 # private variable not callable from outside the class
     def counter(self):
         self.__timer =+1
         print("{} hours before the next strike.".format(self.__timer))
@@ -358,7 +361,6 @@ missle1.counter()
 ```Python
 import pandas
 import numpy
-
 
 #pandas?
 #numpy?
