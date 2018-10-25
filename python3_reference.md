@@ -396,9 +396,10 @@ finally: #this code will be always execute no matter what
 ### Regex 
 Main module [re](https://docs.python.org/3.3/library/re.html)
 - [RegexOne](https://regexone.com/)
-</br>
+
 An example taken from the re help page.
 ```Python
+
 import collections
 import re
 
@@ -435,18 +436,18 @@ def tokenize(s):
     if pos != len(s):
         raise RuntimeError('Unexpected character %r on line %d' %(s[pos], line))
 
-statements = '''
+statements =
     IF quantity THEN
         total := total + price * quantity;
         tax := price * 0.05;
     ENDIF;
-'''
 
 for token in tokenize(statements):
     print(token)
 
 
 ```
+
 
 ### Multithreaded Programming
 ```Python
