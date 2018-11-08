@@ -828,3 +828,35 @@ def on_press(key):
 with kb.Listener(on_press=on_press) as listener:
     listener.join()
 ```
+
+### executing external programs in python 
+exec() function is used for the dynamic execution of Python program which can either be a string or object code. If it is a string, the string is parsed as a suite of Python statements which is then executed unless a syntax error occurs and if it is an object code, it is simply executed. We must be careful that the return statements may not be used outside of function definitions not even within the context of code passed to the exec() function. It doesn;t returnn any value, hence returns None.
+Syntax:
+
+exec(object[, globals[, locals]])
+
+It can take three parameters:
+    - object: As already said this can be a string or object code
+    - globals: This can be a dictionary and the parameter is optional
+    - locals: This can be a mapping object and is also optional
+    
+Example 1   
+```Python
+prog = 'print("The sum of 5 and 10 is", (5+10))'
+exec(prog) 
+```
+Example 2
+```Python
+def execfile(status, filepath, globals=None, locals=None):
+    if not status:
+        if globals is None:
+            globals = {}
+        globals.update({
+            "__file__": filepath,
+            "__name__": "__main",
+        })
+        with open(filepath, 'rb') as file:
+            exec(compile(file.read(), FILENAME, 'exec'), globals, locals)
+            return True
+    else:
+return True```
