@@ -2,6 +2,7 @@
 This is the rework of my old notes in python, I am using the excuse of having an interview to actually go over these notes and improve them with some more knowledge I aquired during my previous internship.
 So, the first thing I am changing the file type to an md file, so I can make it preattier  to read. 
 
+A very important git of mine connected with developing in python is the [gitHelpPage](https://github.com/H3xHunter/GitH3xProtocol/blob/master/gitCommands.md)
 
 ### Basic Operators
 ```Python
