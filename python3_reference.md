@@ -206,9 +206,14 @@ print(list1)
 
 #check an item inside a list
 print("x" in ["x",88,"Torino"])
+
+#two-value list
+my_list = []
+my_list.append([key,value])
 ```
 
 ### Dictionaries
+In dictionaries you cannot have double entries as key like in the lists. There is not append and you can only update a dictionary
 ```Python
 dictionary1 = {"key1":"Ferrari","key2":"Mercedes"}
 dictionary2 = {"key1":[14,77,54],"key2":"Mercedes"}
@@ -221,6 +226,14 @@ print(dictionary3["key1"]["numbers"][2])
 print(dictionary1.keys())
 print(dictionary1.items())
 print(dictionary1.values())
+
+#Adding or updating the dictionary:
+mydict = {}
+mydict.update({key:value})
+
+#Loop through a dictionary:
+for key, value in My_dic
+print('{}{}'.format(key,value))
 ```
 
 ### Touples
